@@ -5,15 +5,30 @@
   <title>初めてのjQuery</title>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript">
-    $(function(){
-      $("#toggle").on("click",function(){
-        $("#target").fadeToggle("slow");
-      });
-    });
+    (function($){
+	$(".photo img").bind("load",function(){
+		var ImgHeight = $(this).height();
+		$('.photo').css('height',ImgHeight);
+	});
+	
+	$('.nav a').click(function(){
+		if($(this).hasClass('over') == false){
+			$('.nav a').removeClass('over');
+			$(this).addClass('over');
+			$('.photo img').hide().attr('src',$(this).attr('href')).fadeIn();
+		};
+		return false;
+	}).filter(':eq(0)').click();
+});
     </script>
  </head>
  <body>
-   <div id="target">表示・非表示される要素</div>
-   <button id="toggle">切り替え</button>
+   <div class="photo"><img src="images/photo01.jpg"></div>
+<div class="nav">
+	<ul>
+		<li><a href="images/ガーベラ.jpg"><img src="images/ガーベラ_s.jpg"></a></li>
+		<li><a href="images/flower3.jpg"><img src="images/flower3_s.jpg"></a></li>
+	</ul>
+</div>
  </body>
  </html>
