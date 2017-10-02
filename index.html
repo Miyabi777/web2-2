@@ -3,23 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>初めてのjQuery</title>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript">
-    $(function(){
-     $('a img').hover(function(){
-        $(this).attr('src', $(this).attr('src').replace('_off', '_on'));
-          }, function(){
-             if (!$(this).hasClass('currentPage')) {
-             $(this).attr('src', $(this).attr('src').replace('_on', '_off'));
-        }
-   });
-});
-    </script>
  </head>
  <body>
-   <a href="#">
-     <img src="flower3_off.jpg" alt="hoge" border="0" />
-</a>
-
+   <div class="wrap">
+<p><img src="img/01.jpg" width="400" height="400" alt="下筌ダム" id="MainPhoto"></p>
+<ul>
+<li><img src="img/ガーベラ.jpg" width="72" alt="ガーベラ" class="ChangePhoto"></li>
+<li><img src="img/flower3.jpg" width="72" alt="花" class="ChangePhoto"></li>
+</ul>
+</div>
  </body>
  </html>
