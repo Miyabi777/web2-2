@@ -5,15 +5,15 @@
   <title>初めてのjQuery</title>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript">
-    $(document).ready(function(){
-      $("button").click(function(){
-        $("img").attr('src','img/flower3.jpg).attr('alt','花');
+    $(function(){
+      $("#toggle").on("click",function(){
+        $("#target").fadeToggle("slow");
       });
     });
     </script>
  </head>
  <body>
-   <p class="flower"><img src="img/images.jpg" alt="花"></p>
+   <div id="target">表示・非表示される要素</div>
    <button id="toggle">切り替え</button>
  </body>
  </html>
