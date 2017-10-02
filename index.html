@@ -1,9 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>初めてのjQuery</title>
+ 
+ <meta charset="UTF-8">
+ 
+ <title>初めてのjQuery</title>
+ 
+ <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+ 
+ <script type="text/javascript">
+   
+ $(function(){
+    $("img.ChangePhoto").click(function(){
+        var ImgSrc = $(this).attr("src");
+        var ImgAlt = $(this).attr("alt");
+        $("img#MainPhoto").attr({src:ImgSrc,alt:ImgAlt});
+        $("img#MainPhoto").hide();
+        $("img#MainPhoto").fadeIn("slow");
+        return false;
+    });
+});
+ </script>
+
  </head>
+
  <body>
    <div class="wrap">
 <p><img src="img/ガーベラ.jpg" width="400" height="400" alt="ガーベラ" id="MainPhoto"></p>
