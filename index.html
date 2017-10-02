@@ -6,29 +6,20 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript">
     $(function(){
-	$(".photo img").bind("load",function(){
-		var ImgHeight = $(this).height();
-		$('.photo').css('height',ImgHeight);
-	});
-	
-	$('.nav a').click(function(){
-		if($(this).hasClass('over') == false){
-			$('.nav a').removeClass('over');
-			$(this).addClass('over');
-			$('.photo img').hide().attr('src',$(this).attr('href')).fadeIn();
-		};
-		return false;
-	}).filter(':eq(0)').click();
+     $('a img').hover(function(){
+        $(this).attr('src', $(this).attr('src').replace('_off', '_on'));
+          }, function(){
+             if (!$(this).hasClass('currentPage')) {
+             $(this).attr('src', $(this).attr('src').replace('_on', '_off'));
+        }
+   });
 });
     </script>
  </head>
  <body>
-   <div class="photo"><img src="images/photo01.jpg"></div>
-<div class="nav">
-	<ul>
-		<li><a href="images/ガーベラ.jpg"><img src="images/ガーベラ_s.jpg"></a></li>
-		<li><a href="images/flower3.jpg"><img src="images/flower3_s.jpg"></a></li>
-	</ul>
-</div>
+   <a href="#">
+     <img src="flower3_off.jpg" alt="hoge" border="0" />
+</a>
+
  </body>
  </html>
